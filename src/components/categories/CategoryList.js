@@ -8,6 +8,9 @@ class CategoryList extends Component {
     componentDidMount() {
         this.props.actions.getCategories()
     }
+    selectCategory = (category) => {
+        this.props.actions.changeCategory(category)
+    }
     render() {
         return (
             <div>
@@ -16,7 +19,7 @@ class CategoryList extends Component {
                     {
                         this.props.categories.map(category => {
                             return <ListGroupItem active={category.id === this.props.currentCategory.id} style={{ cursor: "pointer" }} key={category.id}
-                                onClick={() => this.props.actions.changeCategory(category)}
+                                onClick={() => this.selectCategory(category)}
                             >
                                 {category.categoryName}
                             </ListGroupItem>
