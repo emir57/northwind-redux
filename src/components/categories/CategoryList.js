@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux"
 import * as categoryActions from '../../redux/actions/categoryActions'
 
 class CategoryList extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.actions.getCategories()
     }
     render() {
@@ -14,9 +14,9 @@ class CategoryList extends Component {
                 <h3 className='display-6'>Categories</h3>
                 <ListGroup>
                     {
-                        this.props.categories.map(category=>{
-                            return <ListGroupItem active={category.id === this.props.currentCategory.id} style={{cursor:"pointer"}} key={category.id}
-                            onClick={()=>this.props.actions.changeCategory(category)}
+                        this.props.categories.map(category => {
+                            return <ListGroupItem active={category.id === this.props.currentCategory.id} style={{ cursor: "pointer" }} key={category.id}
+                                onClick={() => this.props.actions.changeCategory(category)}
                             >
                                 {category.categoryName}
                             </ListGroupItem>
@@ -31,17 +31,17 @@ class CategoryList extends Component {
 function mapStateToProps(state) {
     return {
         currentCategory: state.changeCategoryReducer,
-        categories:state.categoryListReducer
+        categories: state.categoryListReducer
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         actions: {
-            getCategories:bindActionCreators(categoryActions.getCategories,dispatch),
-            changeCategory:bindActionCreators(categoryActions.changeCategory,dispatch)
-    }
+            getCategories: bindActionCreators(categoryActions.getCategories, dispatch),
+            changeCategory: bindActionCreators(categoryActions.changeCategory, dispatch)
+        }
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(CategoryList)
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryList)
