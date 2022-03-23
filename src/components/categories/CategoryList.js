@@ -15,7 +15,7 @@ class CategoryList extends Component {
                 <ListGroup>
                     {
                         this.props.categories.map(category=>{
-                            return <ListGroupItem style={{cursor:"pointer"}} key={category.id}
+                            return <ListGroupItem active={category.id === this.props.currentCategory.id} style={{cursor:"pointer"}} key={category.id}
                             onClick={()=>this.props.actions.changeCategory(category)}
                             >
                                 {category.categoryName}
