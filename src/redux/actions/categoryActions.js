@@ -6,3 +6,10 @@ export function changeCategory(category) {
         payload: category
     }
 }
+
+export function getCategories(){
+    return {
+        type: actionTypes.GET_CATEGORIES_SUCCESS,
+        payload : payload
+    }
+}
