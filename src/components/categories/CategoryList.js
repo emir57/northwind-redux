@@ -16,7 +16,7 @@ class CategoryList extends Component {
                     {
                         this.props.categories.map(category=>{
                             return <ListGroupItem key={category.id}
-                            onClick={()=>}
+                            onClick={()=>this.props.actions.changeCategory(category)}
                             >
                                 {category.categoryName}
                             </ListGroupItem>
