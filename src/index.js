@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './components/root/App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Dashboard from './components/root/Dashboard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Dashboard />
   </React.StrictMode>,
   document.getElementById('root')
 );
