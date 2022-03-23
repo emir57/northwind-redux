@@ -7,7 +7,7 @@ class CategoryList extends Component {
     render() {
         return (
             <div>
-                <h3 className='display-6'>Categories</h3>
+                <h3 className='display-6'>Categories {this.props.actions.getCategories().length}</h3>
                 <h5>Seçili Kategori : {this.props.currentCategory.categoryName}</h5>
             </div>
         )
