@@ -17,9 +17,11 @@ export default class Navi extends Component {
                         reactstrap
                     </NavbarBrand>
                     <NavbarToggler onClick={function noRefCheck() { }} />
-                    <Collapse navbar>
+                    <Collapse 
+                        navbar
+                        >
                         <Nav
-                            className="me-auto"
+                            className="ms-auto"
                             navbar
                         >
                             <NavItem>
