@@ -15,7 +15,9 @@ class CategoryList extends Component {
                 <ListGroup>
                     {
                         this.props.categories.map(category=>{
-                            return <ListGroupItem key={category.id}>
+                            return <ListGroupItem key={category.id}
+                            onClick={()=>}
+                            >
                                 {category.categoryName}
                             </ListGroupItem>
                         })
@@ -36,7 +38,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: {
-            getCategories:bindActionCreators(categoryActions.getCategories,dispatch)
+            getCategories:bindActionCreators(categoryActions.getCategories,dispatch),
+            changeCategory:bindActionCreators(categoryActions.changeCategory,dispatch)
     }
     }
 }
