@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Badge } from 'reactstrap'
+import { bindActionCreators } from 'redux'
 
 class ProductList extends Component {
     render() {
@@ -18,4 +19,11 @@ function mapStateToProps(state){
         products:state.productListReducer
     }
 }
-export default connect(mapStateToProps)(ProductList)
+function mapDispatchToProps(dispatch){
+    return {
+        actions:{
+            getProducts:bindActionCreators(productActions.getProducts,dispatch)
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ProductList)
