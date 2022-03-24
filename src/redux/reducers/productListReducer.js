@@ -6,6 +6,6 @@ export default function productListReducer(state=initialState.products,action){
         case actionTypes.GET_PRODUCTS_SUCCESS:
             return action.payload;
         default:
-            state;
+            return state;
     }
 }

@@ -4,10 +4,14 @@ import { Badge } from 'reactstrap'
 import { bindActionCreators } from 'redux'
 
 class ProductList extends Component {
+    componentDidMount(){
+        this.props.actions.getProducts();
+    }
     render() {
         return (
             <div>
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
+                {this.props.products.length}
             </div>
         )
     }
