@@ -26,7 +26,7 @@ class ProductList extends Component {
                     <tbody>
                         {
                             this.props.products.map(product => {
-                                return <tr>
+                                return <tr key={product.id}>
                                     <td>{product.id}</td>
                                     <td>{product.categoryId}</td>
                                     <td>{product.productName}</td>
