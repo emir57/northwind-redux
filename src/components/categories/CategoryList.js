@@ -17,6 +17,9 @@ class CategoryList extends Component {
             <div>
                 <h3 className='display-6'>Categories</h3>
                 <ListGroup>
+                    <ListGroupItem 
+                    style={{"cursor":"pointer"}} 
+                    onClick={()=>this.props.actions.getProducts()}>All Products</ListGroupItem>
                     {
                         this.props.categories.map(category => {
                             return <ListGroupItem active={category.id === this.props.currentCategory.id} style={{ cursor: "pointer" }} key={category.id}
