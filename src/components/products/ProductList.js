@@ -12,7 +12,7 @@ class ProductList extends Component {
         return (
             <div>
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
-                <Table>
+                <Table striped hover>
                     <thead>
                         <tr>
                             <th>#</th>
