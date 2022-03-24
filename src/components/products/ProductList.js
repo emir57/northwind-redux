@@ -14,7 +14,8 @@ class ProductList extends Component {
 
 function mapStateToProps(state){
     return {
-        currentCategory:state.changeCategoryReducer
+        currentCategory:state.changeCategoryReducer,
+        products:state.productListReducer
     }
 }
 export default connect(mapStateToProps)(ProductList)
