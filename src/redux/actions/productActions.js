@@ -11,7 +11,7 @@ export function getProducts(categoryId) {
     return function (dispatch) {
         let url = "http://localhost:3000/products";
         if(categoryId){
-            url+="?categoryId"+categoryId;
+            url+="?categoryId="+categoryId;
         }
         fetch(url)
             .then(data => data.json())
