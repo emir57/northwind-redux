@@ -3,7 +3,7 @@ import initialState from './initialState'
 export default function cartReducer(state = initialState.cart, action) {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
-            let item = state.cart.find(x => x.product.id === action.payload.id);
+            let item = state.find(x => x.product.id === action.payload.id);
             if (!item)
                 return [...state,{...action.payload}]
             else {
