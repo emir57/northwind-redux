@@ -7,9 +7,7 @@ export default function cartReducer(state = initialState.cart, action) {
             if (!item) {
                 state = state.slice();
                 state.push(Object.assign({quantity:1,product:action.payload}));
-                console.log(state)
                 return state;
-                // return [...state, {...action.payload}]
             }
             else {
                 var newState = state.map(cartItem => {
