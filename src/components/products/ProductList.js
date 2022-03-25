@@ -4,6 +4,7 @@ import { Badge, Table } from 'reactstrap'
 import { bindActionCreators } from 'redux'
 import * as productActions from "../../redux/actions/productActions"
 import * as cartActions from "../../redux/actions/cartActions"
+import { Button } from 'reactstrap'
 
 class ProductList extends Component {
     componentDidMount() {
@@ -22,6 +23,7 @@ class ProductList extends Component {
                             <th>Quantity Per Unit</th>
                             <th>Unit Price</th>
                             <th>Units In Stock</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +36,13 @@ class ProductList extends Component {
                                     <td>{product.quantityPerUnit}</td>
                                     <td>{product.unitPrice}</td>
                                     <td>{product.unitsInStock}</td>
+                                    <td>
+                                        <Button color='info' onClick={()=>{
+                                            this.props.actions.addToCart(product)
+                                        }}>
+                                            Add Cart
+                                        </Button>
+                                    </td>
                                 </tr>
                             })
                         }
