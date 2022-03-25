@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes'
 import initialState from './initialState'
-export function cartReducer(state = initialState.cart, action) {
+export default function cartReducer(state = initialState.cart, action) {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
             let item = state.cart.find(x => x.product.id === action.payload.id);
