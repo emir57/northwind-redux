@@ -46,7 +46,8 @@ class ProductList extends Component {
 function mapStateToProps(state) {
     return {
         currentCategory: state.changeCategoryReducer,
-        products: state.productListReducer
+        products: state.productListReducer,
+        carts:state.cartReducer
     }
 }
 function mapDispatchToProps(dispatch) {
