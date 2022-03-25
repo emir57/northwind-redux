@@ -10,7 +10,7 @@ export default function cartReducer(state = initialState.cart, action) {
                 return state;
             }
             else {
-                var newState = state.map(cartItem => {
+                let newState = state.map(cartItem => {
                     if (cartItem.product.id === action.payload.id) {
                         return Object.assign({}, item, { quantity: item.quantity + 1 })
                     }
