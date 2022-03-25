@@ -6,7 +6,8 @@ export default function cartReducer(state = initialState.cart, action) {
             let item = state.find(x => x.product.id === action.payload.id);
             if (!item) {
                 state = state.slice();
-                state.push(action.payload);
+                state.push(Object.assign({quantity:1,product:action.payload}));
+                console.log(state)
                 return state;
                 // return [...state, {...action.payload}]
             }
