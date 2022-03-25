@@ -10,6 +10,9 @@ class ProductList extends Component {
     componentDidMount() {
         this.props.actions.getProducts();
     }
+    addToCart = product=>{
+        this.props.actions.addToCart(product);
+    }
     render() {
         return (
             <div>
@@ -45,7 +48,7 @@ class ProductList extends Component {
                                     <td>{product.unitsInStock}</td>
                                     <td>
                                         <Button color='info' onClick={() => {
-                                            this.props.actions.addToCart(product)
+                                            this.addToCart(product)
                                         }}>
                                             Add Cart
                                         </Button>
