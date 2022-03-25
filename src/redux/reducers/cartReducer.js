@@ -3,12 +3,18 @@ import initialState from './initialState'
 export function cartReducer(state = initialState.cart, action) {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
-            let index = state.cart.findIndex(x => x.product.id === action.payload.id);
-            if(index === -1)
-                state.cart.push(action.payload);
-            else
-                state.cart[index].quantity+=1;
-            return state;
+            let item = state.cart.find(x => x.product.id === action.payload.id);
+            if (!item)
+                return [...state,{...action.payload}]
+            else {
+                var newState = state.map(cartItem => {
+                    if (cartItem.product.id === action.payload.id) {
+                        return Object.assign({}, item, { quantity: item.quantity + 1 })
+                    }
+                    return cartItem;
+                });
+                return newState;
+            }
         default:
             return state;
     }
