@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Badge, Table } from 'reactstrap'
 import { bindActionCreators } from 'redux'
 import * as productActions from "../../redux/actions/productActions"
+import * as cartActions from "../../redux/actions/cartActions"
 
 class ProductList extends Component {
     componentDidMount() {
@@ -53,7 +54,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         actions: {
-            getProducts: bindActionCreators(productActions.getProducts, dispatch)
+            getProducts: bindActionCreators(productActions.getProducts, dispatch),
+            addToCart: bindActionCreators(cartActions.addToCart)
         }
     }
 }
