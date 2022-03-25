@@ -6,6 +6,7 @@ import * as productActions from "../../redux/actions/productActions"
 import * as cartActions from "../../redux/actions/cartActions"
 import { Button } from 'reactstrap'
 
+
 class ProductList extends Component {
     componentDidMount() {
         this.props.actions.getProducts();
