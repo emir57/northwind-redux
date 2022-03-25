@@ -13,6 +13,13 @@ class ProductList extends Component {
     render() {
         return (
             <div>
+                {
+                    this.props.carts.map(cart => {
+                        return <div>
+                            {cart.product.productName}
+                        </div>
+                    })
+                }
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
                 <Table striped hover>
                     <thead>
@@ -37,7 +44,7 @@ class ProductList extends Component {
                                     <td>{product.unitPrice}</td>
                                     <td>{product.unitsInStock}</td>
                                     <td>
-                                        <Button color='info' onClick={()=>{
+                                        <Button color='info' onClick={() => {
                                             this.props.actions.addToCart(product)
                                         }}>
                                             Add Cart
@@ -57,14 +64,14 @@ function mapStateToProps(state) {
     return {
         currentCategory: state.changeCategoryReducer,
         products: state.productListReducer,
-        carts:state.cartReducer
+        carts: state.cartReducer
     }
 }
 function mapDispatchToProps(dispatch) {
     return {
         actions: {
             getProducts: bindActionCreators(productActions.getProducts, dispatch),
-            addToCart: bindActionCreators(cartActions.addToCart)
+            addToCart: bindActionCreators(cartActions.addToCart,dispatch)
         }
     }
 }
