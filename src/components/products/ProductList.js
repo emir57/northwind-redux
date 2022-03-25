@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import * as productActions from "../../redux/actions/productActions"
 import * as cartActions from "../../redux/actions/cartActions"
 import { Button } from 'reactstrap'
-
+import alertify from '../../../node_modules/alertify'
 
 class ProductList extends Component {
     componentDidMount() {
@@ -13,6 +13,7 @@ class ProductList extends Component {
     }
     addToCart = product=>{
         this.props.actions.addToCart(product);
+        alertify.notify("Added To Cart "+product.productName,"success",3)
     }
     render() {
         return (
