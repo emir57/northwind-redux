@@ -15,7 +15,7 @@ class CartSummary extends Component {
             "display": "inline-block",
             "float": "right",
             "fontSize": "large",
-            "backgroundColor": "#F2F3F4",
+            "backgroundColor": "#F8F9F9",
             "borderRadius": "6px",
             "padding": "1px"
         }
