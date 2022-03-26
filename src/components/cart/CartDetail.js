@@ -28,4 +28,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapDispatchToProps,mapStateToProps)(CartDetail);
+export default connect(mapStateToProps,mapDispatchToProps)(CartDetail);
