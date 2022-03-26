@@ -12,6 +12,12 @@ class CartDetail extends Component {
         )
     }
 }
+function mapStateToProps(state){
+    return{
+        carts:state.cartReducer
+    }
+}
+
 function mapDispatchToProps(dispatch){
     return {
         actions:{
@@ -20,4 +26,4 @@ function mapDispatchToProps(dispatch){
     }
 }
 
-export default connect(mapDispatchToProps)(CartDetail);
+export default connect(mapDispatchToProps,mapStateToProps)(CartDetail);
