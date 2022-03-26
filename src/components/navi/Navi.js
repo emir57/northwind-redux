@@ -15,9 +15,11 @@ export default class Navi extends Component {
                     expand="md"
                     light
                 >
-                    <NavbarBrand href="/">
-                        reactstrap
-                    </NavbarBrand>
+                    <Link to="/" style={{ "textDecoration": "none" }}>
+                        <NavbarBrand >
+                            reactstrap
+                        </NavbarBrand>
+                    </Link>
                     <NavbarToggler onClick={function noRefCheck() { }} />
                     <Collapse
                         navbar
@@ -27,7 +29,7 @@ export default class Navi extends Component {
                             navbar
                         >
                             <NavItem>
-                                <Link to="/" style={{"textDecoration":"none"}}>
+                                <Link to="/" style={{ "textDecoration": "none" }}>
                                     <NavLink >
                                         Products
                                     </NavLink>
