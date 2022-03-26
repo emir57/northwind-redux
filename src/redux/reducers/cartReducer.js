@@ -3,6 +3,10 @@ import initialState from './initialState'
 export default function cartReducer(state = initialState.cart, action) {
     switch (action.type) {
         case actionTypes.ADD_TO_CART:
+            let name = "";
+            if(action.payload.productName.length > 10){
+                action.payload.productName=action.payload.productName.substr(0,10)+"...";
+            }
             let item = state.find(x => x.product.id === action.payload.id);
             if (!item) {
                 state = state.slice();
