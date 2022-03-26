@@ -7,7 +7,9 @@ class CartDetail extends Component {
     render() {
         return (
             <div>
-                
+                {
+                    console.log(this.props.carts)
+                }
             </div>
         )
     }
