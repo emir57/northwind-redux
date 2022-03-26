@@ -22,7 +22,7 @@ class CartSummary extends Component {
                     caret
                     nav
                 >
-                    Cart
+                    Cart ({this.props.carts.length})
                 </DropdownToggle>
                 <DropdownMenu end>
                     {
