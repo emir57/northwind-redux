@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge } from 'reactstrap'
 import cartReducer from '../../redux/reducers/cartReducer'
 import * as cartActions from '../../redux/actions/cartActions'
+import { bindActionCreators } from 'redux'
 
 class CartSummary extends Component {
     componentDidMount() {
@@ -39,5 +40,12 @@ function mapStateToProps(state) {
         carts: state.cartReducer
     }
 }
+function mapDispatchToProps(dispatch){
+    return {
+        actions:{
+            removeToCart:bindActionCreators(cartActions.removeToCart,dispatch)
+        }
+    }
+}
 
-export default connect(mapStateToProps)(CartSummary)
+export default connect(mapStateToProps,mapDispatchToProps)(CartSummary)
