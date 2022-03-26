@@ -31,7 +31,7 @@ export default class Navi extends Component {
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="https://github.com/reactstrap/reactstrap">
+                                <NavLink href="https://github.com/emir57">
                                     GitHub
                                 </NavLink>
                             </NavItem>
