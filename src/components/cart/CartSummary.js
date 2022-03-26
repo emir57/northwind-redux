@@ -28,7 +28,7 @@ class CartSummary extends Component {
                     {
                         this.props.carts.map(cart => {
                             return <DropdownItem key={cart.product.id}>
-                                {cart.product.productName} <Badge color='info'>{cart.quantity}</Badge>
+                                <Badge color='info'>{cart.quantity}</Badge> {cart.product.productName}
                                 <div className='text-danger' style={{ "display": "inline-block", "float": "right", "fontSize": "large" }}
                                     onClick={()=>{
                                         this.removeFromCart(cart.product);
