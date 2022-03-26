@@ -4,6 +4,7 @@ import {
     NavbarToggler, Collapse, UncontrolledDropdown, DropdownToggle,
     DropdownMenu, DropdownItem, NavbarText
 } from 'reactstrap'
+import CartSummary from '../cart/CartSummary'
 export default class Navi extends Component {
     render() {
         return (
@@ -34,7 +35,7 @@ export default class Navi extends Component {
                                     GitHub
                                 </NavLink>
                             </NavItem>
-                            
+                            <CartSummary />
                         </Nav>
                         <NavbarText>
                             Simple Text
