@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge } from 'reactstrap'
 import cartReducer from '../../redux/reducers/cartReducer'
 import * as cartActions from '../../redux/actions/cartActions'
 
@@ -24,7 +24,8 @@ class CartSummary extends Component {
                     {
                         this.props.carts.map(cart => {
                             return <DropdownItem key={cart.product.id}>
-                                {cart.product.productName} | x{cart.quantity}
+                                {cart.product.productName} <Badge color='info'>{cart.quantity}</Badge>
+                                <div className='text-danger' style={{"display":"inline-block","float":"right","fontSize":"large"}}>&times;</div>
                             </DropdownItem>
                         })
                     }
