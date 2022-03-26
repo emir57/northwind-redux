@@ -10,6 +10,16 @@ class CartSummary extends Component {
     componentDidMount() {
 
     }
+    removeCartButton = () => {
+        return {
+            "display": "inline-block",
+            "float": "right",
+            "fontSize": "large",
+            "backgroundColor": "#F2F3F4",
+            "borderRadius": "6px",
+            "padding": "1px"
+        }
+    }
     removeFromCart = product => {
         this.props.actions.removeToCart(product);
     }
@@ -31,7 +41,7 @@ class CartSummary extends Component {
                             this.props.carts.map(cart => {
                                 return <DropdownItem key={cart.product.id}>
                                     <Badge color='info'>{cart.quantity}</Badge> {cart.product.productName}
-                                    <div className='text-danger' style={{ "display": "inline-block", "float": "right", "fontSize": "large" }}
+                                    <div className='text-danger' style={this.removeCartButton()}
                                         onClick={() => {
                                             this.removeFromCart(cart.product);
                                         }}
