@@ -9,6 +9,9 @@ class CartSummary extends Component {
     componentDidMount() {
 
     }
+    removeFromCart = product =>{
+        this.props.actions.removeToCart(product);
+    }
     render() {
         return (
             <UncontrolledDropdown
@@ -28,7 +31,7 @@ class CartSummary extends Component {
                                 {cart.product.productName} <Badge color='info'>{cart.quantity}</Badge>
                                 <div className='text-danger' style={{ "display": "inline-block", "float": "right", "fontSize": "large" }}
                                     onClick={()=>{
-                                        //TODO: remove cart
+                                        this.removeFromCart(cart.product);
                                     }}
                                 >
                                     &times;
