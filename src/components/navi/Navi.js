@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import {
     Nav, NavItem, NavLink, Navbar, NavbarBrand,
     NavbarToggler, Collapse, UncontrolledDropdown, DropdownToggle,
@@ -18,17 +19,19 @@ export default class Navi extends Component {
                         reactstrap
                     </NavbarBrand>
                     <NavbarToggler onClick={function noRefCheck() { }} />
-                    <Collapse 
+                    <Collapse
                         navbar
-                        >
+                    >
                         <Nav
                             className="ms-auto"
                             navbar
                         >
                             <NavItem>
-                                <NavLink href="/components/">
-                                    Components
-                                </NavLink>
+                                <Link to="/" style={{"textDecoration":"none"}}>
+                                    <NavLink >
+                                        Products
+                                    </NavLink>
+                                </Link>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/emir57">
