@@ -5,6 +5,7 @@ import cartReducer from '../../redux/reducers/cartReducer'
 import * as cartActions from '../../redux/actions/cartActions'
 import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
+import alertify from 'alertifyjs'
 
 class CartSummary extends Component {
     componentDidMount() {
@@ -22,6 +23,7 @@ class CartSummary extends Component {
     }
     removeFromCart = product => {
         this.props.actions.removeToCart(product);
+        alertify.notify("Remove from cart " + product.productName, "error", 5);
     }
     getCarts = () => {
         if (this.props.carts.length > 0) {
