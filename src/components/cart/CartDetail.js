@@ -1,12 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import * as cartActions from '../../redux/actions/cartActions'
 
 class CartDetail extends Component {
     render() {
         return (
-            <div>CartDetail</div>
+            <div>
+                
+            </div>
         )
     }
 }
+function mapDispatchToProps(dispatch){
+    return {
+        actions:{
+            removeFromCart:bindActionCreators(cartActions.removeToCart,dispatch)
+        }
+    }
+}
 
-export default connect()(CartDetail);
+export default connect(mapDispatchToProps)(CartDetail);
