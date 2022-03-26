@@ -9,38 +9,47 @@ class CartSummary extends Component {
     componentDidMount() {
 
     }
-    removeFromCart = product =>{
+    removeFromCart = product => {
         this.props.actions.removeToCart(product);
+    }
+    getCarts = () => {
+        if (this.props.carts.length > 0) {
+            return (
+                <UncontrolledDropdown
+                    inNavbar
+                    nav
+                >
+                    <DropdownToggle
+                        caret
+                        nav
+                    >
+                        Cart ({this.props.carts.length})
+                    </DropdownToggle>
+                    <DropdownMenu end>
+                        {
+                            this.props.carts.map(cart => {
+                                return <DropdownItem key={cart.product.id}>
+                                    <Badge color='info'>{cart.quantity}</Badge> {cart.product.productName}
+                                    <div className='text-danger' style={{ "display": "inline-block", "float": "right", "fontSize": "large" }}
+                                        onClick={() => {
+                                            this.removeFromCart(cart.product);
+                                        }}
+                                    >
+                                        &times;
+                                    </div>
+                                </DropdownItem>
+                            })
+                        }
+                    </DropdownMenu>
+                </UncontrolledDropdown>
+            )
+        }
+        return (<div></div>)
+
     }
     render() {
         return (
-            <UncontrolledDropdown
-                inNavbar
-                nav
-            >
-                <DropdownToggle
-                    caret
-                    nav
-                >
-                    Cart ({this.props.carts.length})
-                </DropdownToggle>
-                <DropdownMenu end>
-                    {
-                        this.props.carts.map(cart => {
-                            return <DropdownItem key={cart.product.id}>
-                                <Badge color='info'>{cart.quantity}</Badge> {cart.product.productName}
-                                <div className='text-danger' style={{ "display": "inline-block", "float": "right", "fontSize": "large" }}
-                                    onClick={()=>{
-                                        this.removeFromCart(cart.product);
-                                    }}
-                                >
-                                    &times;
-                                </div>
-                            </DropdownItem>
-                        })
-                    }
-                </DropdownMenu>
-            </UncontrolledDropdown>
+            this.getCarts()
         )
     }
 }
