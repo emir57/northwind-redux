@@ -9,12 +9,12 @@ function App() {
   return (
     <Container>
       <Navi />
+
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        {<Route exact path="/carts" element={<CartDetail />} />}
+        <Route exact path="/carts" element={<CartDetail />} />
       </Routes>
-
-
+      
     </Container>
   );
 }
