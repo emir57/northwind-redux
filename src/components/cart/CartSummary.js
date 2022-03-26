@@ -40,21 +40,23 @@ class CartSummary extends Component {
                                 </DropdownItem>
                             })
                         }
+                        <DropdownItem divider />
+                        <DropdownItem>Go to cart</DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
             )
         }
         return (
             <UncontrolledDropdown
-                    inNavbar
+                inNavbar
+                nav
+            >
+                <DropdownToggle
                     nav
                 >
-                    <DropdownToggle
-                        nav
-                    >
-                        Empty Cart
-                    </DropdownToggle>
-                </UncontrolledDropdown>
+                    Empty Cart
+                </DropdownToggle>
+            </UncontrolledDropdown>
         )
 
     }
