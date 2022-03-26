@@ -18,6 +18,14 @@ export default function cartReducer(state = initialState.cart, action) {
                 });
                 return newState;
             }
+        case actionTypes.REMOVE_FROM_CART:
+            state = state.slice();
+            let getindex = state.findIndex(x=>x.product.id === action.payload.id);
+            if(state[getindex].quantity > 1){
+                state[getindex].quantity -= 1;
+            }else{
+                state.splice(getindex,1);
+            }
         default:
             return state;
     }
