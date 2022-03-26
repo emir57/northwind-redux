@@ -4,6 +4,7 @@ import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge
 import cartReducer from '../../redux/reducers/cartReducer'
 import * as cartActions from '../../redux/actions/cartActions'
 import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
 
 class CartSummary extends Component {
     componentDidMount() {
@@ -41,7 +42,7 @@ class CartSummary extends Component {
                             })
                         }
                         <DropdownItem divider />
-                        <DropdownItem>Go to cart</DropdownItem>
+                        <DropdownItem><Link>Go to cart</Link></DropdownItem>
                     </DropdownMenu>
                 </UncontrolledDropdown>
             )
