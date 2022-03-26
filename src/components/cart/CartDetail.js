@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class CartDetail extends Component {
+class CartDetail extends Component {
     render() {
         return (
             <div>CartDetail</div>
         )
     }
 }
+
+export default connect()(CartDetail);
