@@ -18,13 +18,6 @@ class ProductList extends Component {
     render() {
         return (
             <div>
-                {
-                    this.props.carts.map(cart => {
-                        return <div key={cart.product.id}>
-                            {cart.product.productName} {cart.quantity}
-                        </div>
-                    })
-                }
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
                 <Table striped hover>
                     <thead>
@@ -68,8 +61,7 @@ class ProductList extends Component {
 function mapStateToProps(state) {
     return {
         currentCategory: state.changeCategoryReducer,
-        products: state.productListReducer,
-        carts: state.cartReducer
+        products: state.productListReducer
     }
 }
 function mapDispatchToProps(dispatch) {
