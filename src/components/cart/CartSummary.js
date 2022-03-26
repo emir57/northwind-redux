@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-import { UncontrolledDropdown,DropdownToggle,DropdownMenu,DropdownItem } from 'reactstrap'
+import { connect } from 'react-redux'
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 
-export default class CartSummary extends Component {
+class CartSummary extends Component {
+    componentDidMount(){
+        
+    }
     render() {
         return (
             <UncontrolledDropdown
@@ -12,21 +16,16 @@ export default class CartSummary extends Component {
                     caret
                     nav
                 >
-                    Options
+                    Cart
                 </DropdownToggle>
                 <DropdownMenu end>
                     <DropdownItem>
                         Option 1
-                    </DropdownItem>
-                    <DropdownItem>
-                        Option 2
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>
-                        Reset
                     </DropdownItem>
                 </DropdownMenu>
             </UncontrolledDropdown>
         )
     }
 }
+
+export default connect()(CartSummary)
