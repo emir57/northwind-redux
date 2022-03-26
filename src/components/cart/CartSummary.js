@@ -44,7 +44,18 @@ class CartSummary extends Component {
                 </UncontrolledDropdown>
             )
         }
-        return (<div></div>)
+        return (
+            <UncontrolledDropdown
+                    inNavbar
+                    nav
+                >
+                    <DropdownToggle
+                        nav
+                    >
+                        Empty Cart
+                    </DropdownToggle>
+                </UncontrolledDropdown>
+        )
 
     }
     render() {
