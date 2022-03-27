@@ -16,7 +16,7 @@ class ProductList extends Component {
         alertify.notify("Added To Cart "+product.productName,"success",5)
     }
     addProduct = ()=>{
-        this.props.actions.addProduct({categoryId:1,productName:"Deneme",quantityPerUnit:"unit 1",unitPrice:688,unitsInStock:22})
+        this.props.actions.addProduct({id:79,categoryId:1,productName:"Deneme 2",quantityPerUnit:"unit 1",unitPrice:688,unitsInStock:22})
     }
     render() {
         return (
