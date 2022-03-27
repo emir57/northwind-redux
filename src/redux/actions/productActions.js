@@ -19,15 +19,23 @@ export function updateProductSuccess(product) {
         payload: product
     }
 }
-
-export function saveProduct(product) {
+export function saveProductApi(product) {
     return fetch("http://localhost:3000/products/" + (product.id || ""), {
         method: product.id ? "PUT" : "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(product)
     })
         .then(handleResponse)
-        .catch(handleError)
+        .catch(handleError);
+}
+export function saveProduct(product){
+    return function(dispatch){
+        return saveProductApi(product).then(savedProduct=>{
+            product.id ?
+                dispatch(updateProductSuccess(savedProduct)):
+                dispatch(createProductSuccess(savedProduct));
+        }).catch(error=>{throw error});
+    }
 }
 
 export function getProducts(categoryId) {
