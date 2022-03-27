@@ -4,6 +4,7 @@ import { Container } from "reactstrap";
 import CartDetail from "../cart/CartDetail";
 import CategoryList from "../categories/CategoryList";
 import Navi from "../navi/Navi";
+import AddOrUpdateProduct from "../products/AddOrUpdateProduct";
 import Dashboard from "./Dashboard";
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route exact path="/carts" element={<CartDetail />} />
+        <Route path="/saveproduct/:productId" element={<AddOrUpdateProduct />} />
       </Routes>
       
     </Container>
