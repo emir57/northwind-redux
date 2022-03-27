@@ -17,6 +17,7 @@ class CartDetail extends Component {
                     <thead>
                         <tr>
                             <th>Product Name</th>
+                            <th>Unit Price</th>
                             <th>Quantity</th>
                             <th></th>
                         </tr>
@@ -26,6 +27,7 @@ class CartDetail extends Component {
                             this.props.carts.map(cart => {
                                 return <tr key={cart.product.id}>
                                     <td>{cart.product.productName}</td>
+                                    <td>{cart.product.unitPrice}</td>
                                     <td>{cart.quantity}</td>
                                     <td>
                                         <Button onClick={()=>this.removeFromCart(cart.product)} color='danger'>
