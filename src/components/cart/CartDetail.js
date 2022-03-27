@@ -10,10 +10,17 @@ class CartDetail extends Component {
         this.props.actions.removeFromCart(product);
         alertify.notify("Removed to cart " + product.productName, "error", 3)
     }
+    calculateTotalPrice = ()=>{
+        let total = 0;
+        this.props.carts.forEach(cart=>{
+            total+= cart.product.unitPrice * cart.quantity;
+        })
+        return total == 0?"_":total+"$";
+    }
     render() {
         return (
             <div>
-                <h3 className='display-5'>Total Price: 229$</h3>
+                <h3 className='display-5'>Total Price: {this.calculateTotalPrice()}</h3>
                 <Table>
                     <thead>
                         <tr>
