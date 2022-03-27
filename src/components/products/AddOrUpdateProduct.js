@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { useParams } from "react-router-dom";
 import { getCategories } from '../../redux/actions/categoryActions'
 import { saveProduct } from '../../redux/actions/productActions'
 import ProductDetail from "./ProductDetail";
@@ -13,7 +14,7 @@ function AddOrUpdateProduct({
     history,
     ...props
 }) {
-    const [ product, setProduct ] = useState({ ...props.product });
+    const [product, setProduct] = useState({ ...props.product });
     useEffect(() => {
         if (categories.length === 0) {
             getCategories();
@@ -35,7 +36,7 @@ function AddOrUpdateProduct({
         });
     }
     return (
-        <ProductDetail product={product} categories={categories} onChange={handleChange} onSave={handleSave}/>
+        <ProductDetail product={product} categories={categories} onChange={handleChange} onSave={handleSave} />
     )
 }
 export function getProductById(products, productId) {
@@ -44,7 +45,7 @@ export function getProductById(products, productId) {
 }
 
 function mapStateToProps(state, ownProps) {
-    const productId = ownProps.match.params.productId;
+    const { productId } = ownProps;
     const product = productId && state.productListReducer.length > 0
         ? getProductById(state.productListReducer, productId)
         : {};
@@ -53,6 +54,7 @@ function mapStateToProps(state, ownProps) {
         products: state.productListReducer,
         categories: state.categoryListReducer
     }
+
 }
 
 const mapDispatchToProps = {
