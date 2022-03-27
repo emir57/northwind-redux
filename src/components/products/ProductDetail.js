@@ -18,7 +18,20 @@ const ProductDetail = (
                 error="Hata" />
             <button type="submit" className="btn btn-info">Save</button>
 
-            <SelectInput />
+            <SelectInput
+                name="categoryId"
+                label="Category"
+                value={product.categoryId || ""}
+                defaultOption="Seçiniz"
+                options={categories.map(category => (
+                    {
+                        text: category.categoryName,
+                        value: category.id
+                    }
+                ))}
+                onChange={onChange}
+                error="Hata"
+            />
 
 
         </form>
