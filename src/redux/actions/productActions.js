@@ -7,6 +7,19 @@ export function getProductsSuccess(products) {
     }
 }
 
+export function createProductSuccess(product){
+    return {
+        type: actionTypes.CREATE_PRODUCT_SUCCESS,
+        payload:product
+    }
+}
+export function updateProductSuccess(product){
+    return {
+        type: actionTypes.UPDATE_PRODUCT_SUCCESS,
+        payload:product
+    }
+}
+
 export function getProducts(categoryId) {
     return function (dispatch) {
         let url = "http://localhost:3000/products";
