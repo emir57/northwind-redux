@@ -1,6 +1,7 @@
 import { Button } from "bootstrap";
 import React, { useEffect, useState } from "react";
 import TextInput from '../toolbox/TextInput'
+import SelectInput from '../toolbox/SelectInput'
 
 const ProductDetail = (
     categories,
@@ -16,6 +17,8 @@ const ProductDetail = (
                 onChange={onChange}
                 error="Hata" />
             <button type="submit" className="btn btn-info">Save</button>
+
+            <SelectInput />
 
 
         </form>

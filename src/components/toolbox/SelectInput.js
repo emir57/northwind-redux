@@ -20,3 +20,4 @@ const SelectInput = ({ name, label, onChange, defaultOption, value, error, optio
         </div>
     )
 }
+export default SelectInput;
