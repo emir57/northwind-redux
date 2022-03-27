@@ -13,7 +13,8 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        <Route exact path="/carts" element={<CartDetail />} />
+        <Route path="/carts" element={<CartDetail />} />
+        <Route path="/saveproduct" element={<AddOrUpdateProduct />} />
         <Route path="/saveproduct/:productId" element={<AddOrUpdateProduct />} />
       </Routes>
       

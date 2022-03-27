@@ -13,7 +13,7 @@ function AddOrUpdateProduct({
     history,
     ...props
 }) {
-    const { product, setProduct } = useState({ ...props.product });
+    const [ product, setProduct ] = useState({ ...props.product });
     useEffect(() => {
         if (categories.length === 0) {
             getCategories();
