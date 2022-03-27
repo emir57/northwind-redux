@@ -15,9 +15,13 @@ class ProductList extends Component {
         this.props.actions.addToCart(product);
         alertify.notify("Added To Cart "+product.productName,"success",5)
     }
+    addProduct = ()=>{
+        this.props.actions.addProduct({categoryId:1,productName:"Deneme",quantityPerUnit:"unit 1",unitPrice:688,unitsInStock:22})
+    }
     render() {
         return (
             <div>
+                <Button onClick={()=>this.addProduct()} color='primary'>Ürün Ekle</Button>
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
                 <Table striped hover>
                     <thead>
@@ -68,7 +72,8 @@ function mapDispatchToProps(dispatch) {
     return {
         actions: {
             getProducts: bindActionCreators(productActions.getProducts, dispatch),
-            addToCart: bindActionCreators(cartActions.addToCart,dispatch)
+            addToCart: bindActionCreators(cartActions.addToCart,dispatch),
+            addProduct:bindActionCreators(productActions.saveProduct,dispatch)
         }
     }
 }
