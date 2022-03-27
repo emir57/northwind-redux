@@ -6,6 +6,7 @@ import * as productActions from "../../redux/actions/productActions"
 import * as cartActions from "../../redux/actions/cartActions"
 import { Button } from 'reactstrap'
 import alertify from 'alertifyjs'
+import { Link } from 'react-router-dom'
 
 class ProductList extends Component {
     componentDidMount() {
@@ -43,7 +44,7 @@ class ProductList extends Component {
                                 return <tr key={product.id}>
                                     <td>{product.id}</td>
                                     <td>{product.categoryId}</td>
-                                    <td>{product.productName}</td>
+                                    <td><Link to={"/saveproduct/"+product.id}>{product.productName}</Link></td>
                                     <td>{product.quantityPerUnit}</td>
                                     <td>{product.unitPrice}</td>
                                     <td>{product.unitsInStock}</td>
