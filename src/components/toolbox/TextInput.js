@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextInput = () => {
+const TextInput = ({ name, label, onChange, placeHolder, value, error }) => {
 
 }
 
