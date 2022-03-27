@@ -1,6 +1,6 @@
 import { Button } from "bootstrap";
 import React, { useEffect, useState } from "react";
-import { TextInput } from '../toolbox/TextInput'
+import TextInput from '../toolbox/TextInput'
 
 const ProductDetail = (
     categories,
