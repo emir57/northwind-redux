@@ -13,6 +13,7 @@ class CartDetail extends Component {
     render() {
         return (
             <div>
+                <h3 className='display-5'>Total Price: 229$</h3>
                 <Table>
                     <thead>
                         <tr>
