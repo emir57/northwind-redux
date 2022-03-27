@@ -45,7 +45,10 @@ export async function handleResponse(response){
     const error = await response.text()
     throw new error(error);
 }
-
+export function handleError(error){
+    console.error("Bir hata oluştu");
+    throw error;
+}
 
 export function getProducts(categoryId) {
     return function (dispatch) {
