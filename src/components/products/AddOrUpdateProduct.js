@@ -28,7 +28,19 @@ function AddOrUpdateProduct({
         setProduct(previousProduct => ({
             ...previousProduct,
             [name]: name === "categoryId" ? parseInt(value, 10) : value
-        }))
+        }));
+        if (name==="productName" && !value) {
+            setErrors(previousErrors => ({
+                ...previousErrors,
+                productName: "ürün ismi olmalıdır",
+            }))
+        }
+        if(name==="productName" && value){
+            setErrors(previousErrors => ({
+                ...previousErrors,
+                productName: ""
+            }))
+        }
     }
     function handleSave(event) {
         event.preventDefault();
