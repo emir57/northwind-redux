@@ -6,7 +6,7 @@ import SelectInput from '../toolbox/SelectInput'
 const ProductDetail = ({
     categories,
     product,
-    onSave, onChange
+    onSave, onChange, errors
 }) => {
     return (
         <form onSubmit={onSave}>
@@ -15,7 +15,7 @@ const ProductDetail = ({
                 label="Product Name"
                 value={product.productName}
                 onChange={onChange}
-                error="Hata" />
+                error={errors.productName} />
             <SelectInput
                 name="categoryId"
                 label="Category"
@@ -28,23 +28,23 @@ const ProductDetail = ({
                     }
                 ))}
                 onChange={onChange}
-                error="Hata"
+                error={errors.categoryId}
             />
             <TextInput name="unitPrice"
                 label="Unit Price"
                 value={product.unitPrice}
                 onChange={onChange}
-                error="Hata" />
+                error={errors.unitPrice} />
             <TextInput name="quantityPerUnit"
                 label="QuantityPerUnit"
                 value={product.quantityPerUnit}
                 onChange={onChange}
-                error="Hata" />
+                error={errors.quantityPerUnit} />
             <TextInput name="unitsInStock"
                 label="Units In Stock"
                 value={product.unitsInStock}
                 onChange={onChange}
-                error="Hata" />
+                error={errors.unitsInStock} />
 
             <button type="submit" className="btn btn-info">Save</button>
         </form>
