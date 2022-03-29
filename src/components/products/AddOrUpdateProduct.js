@@ -15,6 +15,7 @@ function AddOrUpdateProduct({
     ...props
 }) {
     const [product, setProduct] = useState({ ...props.product });
+    const [errors, setErrors] = useState({})
     useEffect(() => {
         if (categories.length === 0) {
             getCategories();
@@ -36,7 +37,13 @@ function AddOrUpdateProduct({
         });
     }
     return (
-        <ProductDetail product={product} categories={categories} onChange={handleChange} onSave={handleSave} />
+        <ProductDetail
+            product={product}
+            categories={categories}
+            onChange={handleChange}
+            onSave={handleSave}
+            errors={errors}
+        />
     )
 }
 export function getProductById(products, productId) {
