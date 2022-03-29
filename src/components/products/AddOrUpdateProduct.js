@@ -29,13 +29,17 @@ function AddOrUpdateProduct({
             ...previousProduct,
             [name]: name === "categoryId" ? parseInt(value, 10) : value
         }));
-        if (name==="productName" && !value) {
+        validate(name, value);
+
+    }
+    function validate(name, value) {
+        if (name === "productName" && !value) {
             setErrors(previousErrors => ({
                 ...previousErrors,
                 productName: "ürün ismi olmalıdır",
             }))
         }
-        if(name==="productName" && value){
+        if (name === "productName" && value) {
             setErrors(previousErrors => ({
                 ...previousErrors,
                 productName: ""
