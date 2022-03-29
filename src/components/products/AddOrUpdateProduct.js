@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect, useSelector } from "react-redux";
-import { useSearchParams,useMatch } from "react-router-dom";
+import { useSearchParams, useMatch } from "react-router-dom";
 import { getCategories } from '../../redux/actions/categoryActions'
 import { saveProduct } from '../../redux/actions/productActions'
 import ProductDetail from "./ProductDetail";
@@ -45,7 +45,7 @@ export function getProductById(products, productId) {
 }
 
 function MapStateToProps(state, ownProps) {
-    const productId  = useMatch("/saveproduct/:productId")?.params?.productId ?? "0";
+    const productId = useMatch("/saveproduct/:productId")?.params?.productId ?? "0";
     const product = productId && state.productListReducer.length > 0
         ? getProductById(state.productListReducer, productId)
         : {};

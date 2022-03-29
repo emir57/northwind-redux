@@ -24,7 +24,7 @@ class ProductList extends Component {
     render() {
         return (
             <div>
-                <Button onClick={()=>this.addProduct()} color='primary'>Ürün Ekle</Button>
+                <Link to={"/saveproduct"} className="btn btn-primary">Ürün Ekle</Link>
                 <h3 className='display-6'>Products:<Badge color='info'>{this.props.currentCategory.categoryName}</Badge></h3>
                 <Table striped hover>
                     <thead>
