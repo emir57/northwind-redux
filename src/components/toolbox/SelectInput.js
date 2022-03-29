@@ -2,7 +2,7 @@ import React from "react";
 
 const SelectInput = ({ name, label, onChange, defaultOption, value, error, options }) => {
     return (
-        <div className="form-group">
+        <div className="form-group mb-3">
             <label htmlFor={name}>{label}</label>
             <select name={name} value={value} onChange={onChange} className="form-control">
                 <option value="">
