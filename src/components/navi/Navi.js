@@ -32,6 +32,11 @@ export default class Navi extends Component {
                                 </Link>
                             </NavItem>
                             <NavItem>
+                                <Link className='nav-link' to="/saveproduct" style={{ "textDecoration": "none" }}>
+                                    Add Product
+                                </Link>
+                            </NavItem>
+                            <NavItem>
                                 <NavLink href="https://github.com/emir57">
                                     GitHub
                                 </NavLink>
