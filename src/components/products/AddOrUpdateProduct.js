@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { useParams } from "react-router-dom";
+import { connect, useSelector } from "react-redux";
+import { useSearchParams,useMatch } from "react-router-dom";
 import { getCategories } from '../../redux/actions/categoryActions'
 import { saveProduct } from '../../redux/actions/productActions'
 import ProductDetail from "./ProductDetail";
@@ -40,12 +40,12 @@ function AddOrUpdateProduct({
     )
 }
 export function getProductById(products, productId) {
-    let product = products.find(product => product.id === productId) || null;
+    let product = products.find(product => product.id === +productId) || null;
     return product;
 }
 
-function mapStateToProps(state, ownProps) {
-    const { productId } = ownProps;
+function MapStateToProps(state, ownProps) {
+    const productId  = useMatch("/saveproduct/:productId").params.productId;
     const product = productId && state.productListReducer.length > 0
         ? getProductById(state.productListReducer, productId)
         : {};
@@ -61,4 +61,4 @@ const mapDispatchToProps = {
     getCategories, saveProduct
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddOrUpdateProduct)
+export default connect(MapStateToProps, mapDispatchToProps)(AddOrUpdateProduct)
