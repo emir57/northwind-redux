@@ -16,8 +16,6 @@ const ProductDetail = ({
                 value={product.productName}
                 onChange={onChange}
                 error="Hata" />
-            <button type="submit" className="btn btn-info">Save</button>
-
             <SelectInput
                 name="categoryId"
                 label="Category"
@@ -33,7 +31,7 @@ const ProductDetail = ({
                 error="Hata"
             />
 
-
+            <button type="submit" className="btn btn-info">Save</button>
         </form>
     )
 };
