@@ -45,7 +45,7 @@ export function getProductById(products, productId) {
 }
 
 function MapStateToProps(state, ownProps) {
-    const productId  = useMatch("/saveproduct/:productId").params.productId;
+    const productId  = useMatch("/saveproduct/:productId")?.params?.productId;
     const product = productId && state.productListReducer.length > 0
         ? getProductById(state.productListReducer, productId)
         : {};
