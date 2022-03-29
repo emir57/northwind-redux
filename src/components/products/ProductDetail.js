@@ -8,7 +8,6 @@ const ProductDetail = ({
     product,
     onSave, onChange
 }) => {
-    console.log(categories)
     return (
         <form onSubmit={onSave}>
             <h2>{product.id ? "Güncelle" : "Ekle"}</h2>
